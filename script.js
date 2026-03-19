@@ -1,12 +1,10 @@
 // ====== EDIT THESE SETTINGS ======
 const SETTINGS = {
-  whatsappNumberInternational: "233265355732", // e.g., "233501234567"
+  whatsappNumberInternational: "233265355732",
   officialEmail: "acadataconsult@gmail.com",
   facebookUrl: "https://facebook.com/YOUR_PAGE",
   instagramUrl: "https://www.instagram.com/acadatainsightconsult/",
   peopleServed: 50,
-
-  // Optional (only needed if you have a booking button)
   bookingUrl: "#",
 };
 // =================================
@@ -25,17 +23,17 @@ if (emailLink) {
   emailLink.textContent = SETTINGS.officialEmail;
 }
 
-// Footer social links (ONLY PLACE THEY APPEAR)
+// Footer social links
 const fbFooter = document.getElementById("fbLinkFooter");
 const igFooter = document.getElementById("igLinkFooter");
 if (fbFooter) fbFooter.href = SETTINGS.facebookUrl;
 if (igFooter) igFooter.href = SETTINGS.instagramUrl;
 
-// Book Now button (ONLY in Testimonials now)
+// Book button
 const bookBtn = document.getElementById("bookNowTestimonials");
 if (bookBtn && SETTINGS.bookingUrl) bookBtn.href = SETTINGS.bookingUrl;
 
-// People served counter (animated)
+// People served counter
 const servedEl = document.getElementById("servedCount");
 
 function animateCount(el, target) {
@@ -77,7 +75,7 @@ const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // --------------------
-// Toast popup (no extra HTML needed)
+// Toast popup
 // --------------------
 function showToast(message, type = "success") {
   const toast = document.createElement("div");
@@ -86,10 +84,8 @@ function showToast(message, type = "success") {
 
   document.body.appendChild(toast);
 
-  // animate in
   requestAnimationFrame(() => toast.classList.add("toast--show"));
 
-  // remove after 3 seconds
   setTimeout(() => {
     toast.classList.remove("toast--show");
     setTimeout(() => toast.remove(), 250);
@@ -107,7 +103,10 @@ if (contactForm) {
     e.preventDefault();
 
     const submitBtn = contactForm.querySelector('button[type="submit"]');
-    if (submitBtn) submitBtn.disabled = true;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+    }
 
     if (formStatus) formStatus.textContent = "Sending message...";
 
@@ -121,19 +120,66 @@ if (contactForm) {
       });
 
       if (response.ok) {
-        contactForm.reset(); // clears the form
+        contactForm.reset();
         if (formStatus) formStatus.textContent = "";
-        showToast("Message sent successfully!", "success");
+        showToast("Message successfully sent", "success");
       } else {
-        if (formStatus)
+        if (formStatus) {
           formStatus.textContent = "Something went wrong. Please try again.";
+        }
         showToast("Failed to send. Please try again.", "error");
       }
     } catch (error) {
       if (formStatus) formStatus.textContent = "Network error. Please try again.";
       showToast("Network error. Please try again.", "error");
     } finally {
-      if (submitBtn) submitBtn.disabled = false;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+      }
     }
+  });
+}
+
+// --------------------
+// Brevo popup after 10 seconds
+// --------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("brevoPopup");
+  const popupClose = document.getElementById("brevoPopupClose");
+
+  if (popup) {
+    setTimeout(() => {
+      popup.classList.add("show");
+      document.body.classList.add("popup-open");
+    }, 10000);
+  }
+
+  if (popupClose && popup) {
+    popupClose.addEventListener("click", () => {
+      popup.classList.remove("show");
+      document.body.classList.remove("popup-open");
+    });
+  }
+
+  if (popup) {
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        popup.classList.remove("show");
+        document.body.classList.remove("popup-open");
+      }
+    });
+  }
+});
+
+// --------------------
+// PWA registration
+// --------------------
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./sw.js")
+      .then(() => console.log("Service Worker registered"))
+      .catch((error) => console.log("Service Worker registration failed:", error));
   });
 }
