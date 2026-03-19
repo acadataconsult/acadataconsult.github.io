@@ -142,7 +142,7 @@ if (contactForm) {
 }
 
 // --------------------
-// Brevo popup after 10 seconds
+// Brevo popup after 5 seconds
 // --------------------
 document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("brevoPopup");
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       popup.classList.add("show");
       document.body.classList.add("popup-open");
-    }, 10000);
+    }, 5000);
   }
 
   if (popupClose && popup) {
