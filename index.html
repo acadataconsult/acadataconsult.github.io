@@ -40,6 +40,12 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#070a12">
+<link rel="apple-touch-icon" href="logo.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 
   <body>
@@ -430,6 +436,29 @@
       </footer>
     </main>
 
+    <!-- BREVO EMAIL SUBSCRIPTION POPUP -->
+<div class="brevo-popup-overlay" id="brevoPopup" aria-hidden="true">
+  <div class="brevo-popup-box" role="dialog" aria-modal="true" aria-label="Subscribe to our email list">
+    <button class="brevo-popup-close" id="brevoPopupClose" aria-label="Close popup">
+      &times;
+    </button>
+
+    <div class="brevo-popup-content">
+      <h3>Stay Informed</h3>
+      <p>Subscribe to receive exclusive deals, training alerts, and professional resources delivered straight to your inbox.</p>
+
+      <iframe
+        width="540"
+        height="305"
+        src="https://c2ee2571.sibforms.com/serve/MUIFAMcLl__5Zdcgs65n3YyhkxZmUrkheEpLuofpExm2X8Lzly8AwKndMRc0b2vAVZkNBXySBTqv-rqS-ORcIYILv3KaykHTGcHQt_MvtdltknznwHszmvOG1TA1Dp8Wi2NQbJtKT2KiFjeRqwiNHgEPYs2QXhF5NSdcmRzp8vrA44YUh6nOPcQ4cXZK16XGQYdcQ9X_yjuLjv-V9g=="
+        frameborder="0"
+        scrolling="auto"
+        allowfullscreen
+        style="display:block; margin-left:auto; margin-right:auto; max-width:100%; border-radius:12px;"
+      ></iframe>
+    </div>
+  </div>
+</div>
     <!-- LIVE CHAT: paste widget script here -->
 
     <script src="script.js"></script>
