@@ -1,4 +1,4 @@
-const CACHE_NAME = "acadata-cache-v1";
+const CACHE_NAME = "acadata-cache-v2";
 const urlsToCache = [
   "./",
   "./index.html",
