@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statistical Tools | Acadata Insight Consult</title>
+  <meta
+    name="description"
+    content="Premium free statistical tools for students, researchers, healthcare professionals, NGOs, and businesses: test finder, p-value explainer, chart chooser, confidence intervals, assumption checker, regression recommender, descriptive statistics interpreter, Cronbach’s alpha guide, survey cleaning checklist, power calculator, and sample size estimator."
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="../logo.png" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div>Acadata Insight Consult</div>
+      </div>
+      <div class="topbar-links">
+        <a href="../index.html">← Back to Home</a>
+        <a data-wa-link="Hello Acadata Insight Consult. I need help with data analysis." href="#" target="_blank" rel="noopener">Need Help?</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Smart <span class="grad">statistical tools</span> for student research</h1>
+      <p>
+        Your all-in-one free statistical toolkit. Find the right test, understand p-values, check assumptions, run regression, calculate confidence intervals, determine sample size and power, clean survey data, assess reliability (Cronbach’s alpha), and choose the best charts. Designed for undergraduate, MSc, MPhil and PhD students.
+      </p>
+
+      <div class="section-links">
+        <a href="#test-finder">Test Finder</a>
+        <a href="#pvalue-explainer">P-value</a>
+        <a href="#chart-chooser">Charts</a>
+        <a href="#ci-calculator">Confidence Interval</a>
+        <a href="#assumption-checker">Assumptions</a>
+        <a href="#regression-recommender">Regression</a>
+        <a href="#descriptive-interpreter">Descriptive Stats</a>
+        <a href="#cronbach-guide">Cronbach’s Alpha</a>
+        <a href="#survey-checklist">Survey Cleaning</a>
+        <a href="#power-calculator">Power</a>
+        <a href="#sample-size-estimator">Sample Size</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="tool-wrap">
+    <div class="container">
+
+      <section class="tool-section" id="test-finder">
+        <div class="tool-card">
+          <div class="tool-header">
+            <h2>Statistical Test Recommender</h2>
+            <p>Select the options that best match your study design.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="goal">1. What do you want to do?</label>
+              <select id="goal">
+                <option value="">Select one</option>
+                <option value="difference">Compare groups</option>
+                <option value="relationship">Find relationship/association</option>
+                <option value="prediction">Predict an outcome</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="outcome">2. What is your main outcome variable?</label>
+              <select id="outcome">
+                <option value="">Select one</option>
+                <option value="continuous">Continuous / numerical</option>
+                <option value="categorical">Categorical</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="predictor">3. What type is your main predictor/group variable?</label>
+              <select id="predictor">
+                <option value="">Select one</option>
+                <option value="categorical">Categorical</option>
+                <option value="continuous">Continuous / numerical</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="groups">4. How many groups are being compared?</label>
+              <select id="groups">
+                <option value="">Select one</option>
+                <option value="2">Two groups</option>
+                <option value="3plus">Three or more groups</option>
+                <option value="na">Not applicable</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="paired">5. Are the groups paired or independent?</label>
+              <select id="paired">
+                <option value="">Select one</option>
+                <option value="independent">Independent</option>
+                <option value="paired">Paired / matched / repeated</option>
+                <option value="na">Not applicable</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="normality">6. Is your numerical outcome approximately normal?</label>
+              <select id="normality">
+                <option value="">Select one</option>
+                <option value="yes">Yes / approximately normal</option>
+                <option value="no">No / skewed / not sure</option>
+                <option value="na">Not applicable</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn-primary" id="findTestBtn" type="button">Recommend Test</button>
+            <button class="btn-secondary" id="resetBtn" type="button">Reset</button>
+          </div>
+
+          <div class="result" id="resultBox">
+            <h3>Your recommended statistical test</h3>
+            <div class="test-name" id="testName">—</div>
+            <p id="testReason"></p>
+            <p id="testExtra"></p>
+            <p class="note">
+              Note: this tool gives a general recommendation. Final test selection may still depend
+              on assumptions, sample size, study design, and variable coding.
+            </p>
+
+            <div class="cta-box">
+              <strong>Need help running the test, interpreting the output, or writing your results?</strong>
+              <span>
+                Acadata Insight Consult can help you clean your data, run the right analysis,
+                create publication-ready tables and figures, and prepare for defense questions.
+              </span>
+
+              <div class="cta-buttons">
+                <a class="wa-btn" data-wa-link="Hello Acadata Insight Consult. I used your Statistical Test Finder and I need help with my analysis." href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><span class="app-icon whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.52 0 .2 5.31.2 11.86c0 2.09.55 4.13 1.59 5.92L0 24l6.39-1.68a11.83 11.83 0 0 0 5.68 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.24-6.14-3.42-8.43ZM12.08 21.74h-.01a9.85 9.85 0 0 1-5.02-1.38l-.36-.21-3.79.99 1.01-3.7-.23-.38a9.8 9.8 0 0 1-1.5-5.2c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.11 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.44 9.9-9.88 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.48-1.74-1.66-2.03-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.45 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.3 1.27.48 1.71.62.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.03-1.41.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35Z"/></svg></span><span class="sr-only">Chat on WhatsApp</span></a>
+                <a class="email-btn" href="mailto:acadataconsult@gmail.com?subject=Need%20help%20with%20statistical%20analysis" aria-label="Send Email" title="Send Email"><span class="app-icon email-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.1.17 6.25 4.91a1.05 1.05 0 0 0 1.3 0l6.25-4.91a.75.75 0 1 0-.93-1.18L12 10.5 6.03 5.74a.75.75 0 0 0-.93 1.18Z" fill="currentColor"/></svg></span><span class="sr-only">Send Email</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tool-section" id="pvalue-explainer">
+        <div class="tool-card">
+          <div class="tool-header">
+            <h2>P-value Explainer</h2>
+            <p>Enter your p-value and get a plain-language explanation you can understand.</p>
+          </div>
+
+          <div class="single-grid">
+            <div class="field">
+              <label for="pvalueInput">Enter your p-value</label>
+              <input id="pvalueInput" type="number" min="0" max="1" step="0.0001" placeholder="Example: 0.032" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn-primary" id="explainPBtn" type="button">Explain P-value</button>
+            <button class="btn-secondary" id="resetPBtn" type="button">Reset</button>
+          </div>
+
+          <div class="result" id="pvalueResultBox">
+            <h3>P-value explanation</h3>
+            <div class="test-name" id="pvalueTitle">—</div>
+            <p id="pvalueMeaning"></p>
+            <p id="pvalueInterpretation"></p>
+            <p id="pvalueCaution"></p>
+
+            <div class="cta-box">
+              <strong>Want help interpreting your SPSS, R, Stata, or Excel output correctly?</strong>
+              <span>
+                We can help you explain significance, confidence intervals, effect sizes,
+                tables, charts, and result write-up for your thesis.
+              </span>
+
+              <div class="cta-buttons">
+                <a class="wa-btn" data-wa-link="Hello Acadata Insight Consult. I used your P-value Explainer and I need help interpreting my results." href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><span class="app-icon whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.52 0 .2 5.31.2 11.86c0 2.09.55 4.13 1.59 5.92L0 24l6.39-1.68a11.83 11.83 0 0 0 5.68 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.24-6.14-3.42-8.43ZM12.08 21.74h-.01a9.85 9.85 0 0 1-5.02-1.38l-.36-.21-3.79.99 1.01-3.7-.23-.38a9.8 9.8 0 0 1-1.5-5.2c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.11 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.44 9.9-9.88 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.48-1.74-1.66-2.03-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.45 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.3 1.27.48 1.71.62.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.03-1.41.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35Z"/></svg></span><span class="sr-only">Chat on WhatsApp</span></a>
+                <a class="email-btn" href="mailto:acadataconsult@gmail.com?subject=Help%20with%20p-value%20interpretation" aria-label="Send Email" title="Send Email"><span class="app-icon email-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.1.17 6.25 4.91a1.05 1.05 0 0 0 1.3 0l6.25-4.91a.75.75 0 1 0-.93-1.18L12 10.5 6.03 5.74a.75.75 0 0 0-.93 1.18Z" fill="currentColor"/></svg></span><span class="sr-only">Send Email</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tool-section" id="chart-chooser">
+        <div class="tool-card">
+          <div class="tool-header">
+            <h2>Chart Chooser</h2>
+            <p>Answer a few quick questions to find the most suitable chart for your data.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="chartGoal">1. What do you want to show?</label>
+              <select id="chartGoal">
+                <option value="">Select one</option>
+                <option value="compare">Compare groups or categories</option>
+                <option value="trend">Show change over time</option>
+                <option value="distribution">Show distribution of values</option>
+                <option value="relationship">Show relationship between two variables</option>
+                <option value="composition">Show parts of a whole</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="chartDataType">2. What type of data do you mainly have?</label>
+              <select id="chartDataType">
+                <option value="">Select one</option>
+                <option value="categorical">Categorical</option>
+                <option value="continuous">Continuous / numerical</option>
+                <option value="mixed">Mixed / both</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="chartGroups">3. How many categories or groups?</label>
+              <select id="chartGroups">
+                <option value="">Select one</option>
+                <option value="few">Few (2–5)</option>
+                <option value="many">Many (more than 5)</option>
+                <option value="na">Not applicable</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="chartTime">4. Is time involved?</label>
+              <select id="chartTime">
+                <option value="">Select one</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn-primary" id="chooseChartBtn" type="button">Choose Chart</button>
+            <button class="btn-secondary" id="resetChartBtn" type="button">Reset</button>
+          </div>
+
+          <div class="result" id="chartResultBox">
+            <h3>Recommended chart</h3>
+            <div class="test-name" id="chartName">—</div>
+            <p id="chartReason"></p>
+            <p id="chartExtra"></p>
+
+            <div class="cta-box">
+              <strong>Need a clean, thesis-ready chart made for your results section?</strong>
+              <span>
+                We can design publication-style charts, tables, and figure legends that are clear,
+                professional, and easy to defend before supervisors.
+              </span>
+
+              <div class="cta-buttons">
+                <a class="wa-btn" data-wa-link="Hello Acadata Insight Consult. I used your Chart Chooser and I need help creating my figures." href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><span class="app-icon whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.52 0 .2 5.31.2 11.86c0 2.09.55 4.13 1.59 5.92L0 24l6.39-1.68a11.83 11.83 0 0 0 5.68 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.24-6.14-3.42-8.43ZM12.08 21.74h-.01a9.85 9.85 0 0 1-5.02-1.38l-.36-.21-3.79.99 1.01-3.7-.23-.38a9.8 9.8 0 0 1-1.5-5.2c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.11 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.44 9.9-9.88 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.48-1.74-1.66-2.03-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.45 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.3 1.27.48 1.71.62.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.03-1.41.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35Z"/></svg></span><span class="sr-only">Chat on WhatsApp</span></a>
+                <a class="email-btn" href="mailto:acadataconsult@gmail.com?subject=Help%20with%20charts%20and%20figures" aria-label="Send Email" title="Send Email"><span class="app-icon email-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.1.17 6.25 4.91a1.05 1.05 0 0 0 1.3 0l6.25-4.91a.75.75 0 1 0-.93-1.18L12 10.5 6.03 5.74a.75.75 0 0 0-.93 1.18Z" fill="currentColor"/></svg></span><span class="sr-only">Send Email</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tool-section" id="ci-calculator">
+        <div class="tool-card">
+          <div class="tool-header">
+            <h2>Confidence Interval Calculator</h2>
+            <p>Estimate a confidence interval around a sample mean using your summary statistics.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field"><label for="ciMean">Sample mean</label><input id="ciMean" type="number" step="any" placeholder="Example: 52.4" /></div>
+            <div class="field"><label for="ciSd">Standard deviation</label><input id="ciSd" type="number" min="0" step="any" placeholder="Example: 8.1" /></div>
+            <div class="field"><label for="ciN">Sample size (n)</label><input id="ciN" type="number" min="2" step="1" placeholder="Example: 120" /></div>
+            <div class="field">
+              <label for="ciLevel">Confidence level</label>
+              <select id="ciLevel">
+                <option value="">Select one</option>
+                <option value="1.645">90%</option>
+                <option value="1.96">95%</option>
+                <option value="2.576">99%</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn-primary" id="calcCiBtn" type="button">Calculate CI</button>
+            <button class="btn-secondary" id="resetCiBtn" type="button">Reset</button>
+          </div>
+
+          <div class="result" id="ciResultBox">
+            <h3>Confidence interval result</h3>
+            <div class="test-name" id="ciTitle">—</div>
+            <p id="ciMeaning"></p>
+            <p id="ciInterpretation"></p>
+            <p id="ciCaution"></p>
+            <div class="cta-box">
+              <strong>Need help reporting confidence intervals the right way?</strong>
+              <span>We can help you calculate, interpret, and write confidence intervals for means, proportions, odds ratios, regression coefficients, and model outputs.</span>
+              <div class="cta-buttons">
+                <a class="wa-btn" data-wa-link="Hello Acadata Insight Consult. I used your Confidence Interval Calculator and I need help interpreting it." href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><span class="app-icon whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.52 0 .2 5.31.2 11.86c0 2.09.55 4.13 1.59 5.92L0 24l6.39-1.68a11.83 11.83 0 0 0 5.68 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.24-6.14-3.42-8.43ZM12.08 21.74h-.01a9.85 9.85 0 0 1-5.02-1.38l-.36-.21-3.79.99 1.01-3.7-.23-.38a9.8 9.8 0 0 1-1.5-5.2c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.11 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.44 9.9-9.88 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.48-1.74-1.66-2.03-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.45 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.3 1.27.48 1.71.62.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.03-1.41.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35Z"/></svg></span><span class="sr-only">Chat on WhatsApp</span></a>
+                <a class="email-btn" href="mailto:acadataconsult@gmail.com?subject=Help%20with%20confidence%20intervals" aria-label="Send Email" title="Send Email"><span class="app-icon email-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.1.17 6.25 4.91a1.05 1.05 0 0 0 1.3 0l6.25-4.91a.75.75 0 1 0-.93-1.18L12 10.5 6.03 5.74a.75.75 0 0 0-.93 1.18Z" fill="currentColor"/></svg></span><span class="sr-only">Send Email</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tool-section" id="assumption-checker">
+        <div class="tool-card">
+          <div class="tool-header">
+            <h2>Assumption Checker</h2>
+            <p>Check whether a parametric analysis is likely appropriate, or whether you should consider a non-parametric alternative.</p>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label for="assumpOutcome">Outcome variable type</label><select id="assumpOutcome"><option value="">Select one</option><option value="continuous">Continuous / numerical</option><option value="categorical">Categorical</option></select></div>
+            <div class="field"><label for="assumpNormality">Is the data approximately normal?</label><select id="assumpNormality"><option value="">Select one</option><option value="yes">Yes</option><option value="no">No</option><option value="unsure">Not sure</option></select></div>
+            <div class="field"><label for="assumpOutliers">Are there serious outliers?</label><select id="assumpOutliers"><option value="">Select one</option><option value="no">No</option><option value="yes">Yes</option><option value="unsure">Not sure</option></select></div>
+            <div class="field"><label for="assumpVariance">Are group variances roughly similar?</label><select id="assumpVariance"><option value="">Select one</option><option value="yes">Yes</option><option value="no">No</option><option value="unsure">Not sure</option></select></div>
+            <div class="field"><label for="assumpIndependence">Are observations independent?</label><select id="assumpIndependence"><option value="">Select one</option><option value="yes">Yes</option><option value="no">No</option><option value="unsure">Not sure</option></select></div>
+            <div class="field"><label for="assumpGoal">Main goal</label><select id="assumpGoal"><option value="">Select one</option><option value="compare">Compare groups</option><option value="correlate">Assess relationship</option><option value="predict">Build a model</option></select></div>
+          </div>
+          <div class="actions"><button class="btn-primary" id="checkAssumpBtn" type="button">Check Assumptions</button><button class="btn-secondary" id="resetAssumpBtn" type="button">Reset</button></div>
+          <div class="result" id="assumpResultBox"><h3>Assumption check summary</h3><div class="test-name" id="assumpTitle">—</div><p id="assumpMeaning"></p><p id="assumpInterpretation"></p><p id="assumpCaution"></p></div>
+        </div>
+      </section>
+
+      <section class="tool-section" id="regression-recommender">
+        <div class="tool-card">
+          <div class="tool-header">
+            <h2>Regression Model Recommender</h2>
+            <p>Choose a more suitable regression model based on your outcome type and data structure.</p>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label for="regOutcome">Outcome type</label><select id="regOutcome"><option value="">Select one</option><option value="continuous">Continuous</option><option value="binary">Binary / yes-no</option><option value="multicat">More than two categories</option><option value="ordinal">Ordered categories</option><option value="count">Count data</option><option value="timeevent">Time-to-event / survival</option></select></div>
+            <div class="field"><label for="regRepeated">Do you have repeated measures or clustered data?</label><select id="regRepeated"><option value="">Select one</option><option value="no">No</option><option value="yes">Yes</option></select></div>
+            <div class="field"><label for="regPredictors">How many predictors?</label><select id="regPredictors"><option value="">Select one</option><option value="one">One predictor</option><option value="many">Multiple predictors</option></select></div>
+            <div class="field"><label for="regGoal">Primary aim</label><select id="regGoal"><option value="">Select one</option><option value="explain">Explain association</option><option value="predict">Predict outcome</option></select></div>
+          </div>
+          <div class="actions"><button class="btn-primary" id="recommendRegBtn" type="button">Recommend Model</button><button class="btn-secondary" id="resetRegBtn" type="button">Reset</button></div>
+          <div class="result" id="regResultBox">
+            <h3>Recommended regression model</h3><div class="test-name" id="regTitle">—</div><p id="regMeaning"></p><p id="regInterpretation"></p><p id="regCaution"></p>
+            <div class="cta-box"><strong>Need help fitting the right model and interpreting the coefficients?</strong><span>We can help with linear, logistic, multinomial, ordinal, Poisson, negative binomial, mixed models, survival models, diagnostics, and publication-ready reporting.</span><div class="cta-buttons"><a class="wa-btn" data-wa-link="Hello Acadata Insight Consult. I used your Regression Model Recommender and I need help with my analysis." href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><span class="app-icon whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.52 0 .2 5.31.2 11.86c0 2.09.55 4.13 1.59 5.92L0 24l6.39-1.68a11.83 11.83 0 0 0 5.68 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.24-6.14-3.42-8.43ZM12.08 21.74h-.01a9.85 9.85 0 0 1-5.02-1.38l-.36-.21-3.79.99 1.01-3.7-.23-.38a9.8 9.8 0 0 1-1.5-5.2c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.11 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.44 9.9-9.88 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.48-1.74-1.66-2.03-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.45 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.3 1.27.48 1.71.62.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.03-1.41.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35Z"/></svg></span><span class="sr-only">Chat on WhatsApp</span></a><a class="email-btn" href="mailto:acadataconsult@gmail.com?subject=Help%20with%20regression%20analysis" aria-label="Send Email" title="Send Email"><span class="app-icon email-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.1.17 6.25 4.91a1.05 1.05 0 0 0 1.3 0l6.25-4.91a.75.75 0 1 0-.93-1.18L12 10.5 6.03 5.74a.75.75 0 0 0-.93 1.18Z" fill="currentColor"/></svg></span><span class="sr-only">Send Email</span></a></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tool-section" id="descriptive-interpreter">
+        <div class="tool-card">
+          <div class="tool-header"><h2>Descriptive Statistics Interpreter</h2><p>Enter basic summary statistics and get a plain-language interpretation for your dataset.</p></div>
+          <div class="form-grid">
+            <div class="field"><label for="descMean">Mean</label><input id="descMean" type="number" step="any" placeholder="Example: 34.5" /></div>
+            <div class="field"><label for="descMedian">Median</label><input id="descMedian" type="number" step="any" placeholder="Example: 31" /></div>
+            <div class="field"><label for="descSd">Standard deviation</label><input id="descSd" type="number" min="0" step="any" placeholder="Example: 10.2" /></div>
+            <div class="field"><label for="descMin">Minimum value</label><input id="descMin" type="number" step="any" placeholder="Example: 12" /></div>
+            <div class="field"><label for="descMax">Maximum value</label><input id="descMax" type="number" step="any" placeholder="Example: 75" /></div>
+            <div class="field"><label for="descN">Sample size</label><input id="descN" type="number" min="1" step="1" placeholder="Example: 220" /></div>
+          </div>
+          <div class="actions"><button class="btn-primary" id="interpretDescBtn" type="button">Interpret Statistics</button><button class="btn-secondary" id="resetDescBtn" type="button">Reset</button></div>
+          <div class="result" id="descResultBox"><h3>Descriptive interpretation</h3><div class="test-name" id="descTitle">—</div><p id="descMeaning"></p><p id="descInterpretation"></p><p id="descCaution"></p></div>
+        </div>
+      </section>
+
+      <section class="tool-section" id="cronbach-guide">
+        <div class="tool-card">
+          <div class="tool-header"><h2>Cronbach’s Alpha / Reliability Guide</h2><p>Interpret the internal consistency of your questionnaire, scale, or survey instrument.</p></div>
+          <div class="form-grid">
+            <div class="field"><label for="alphaValue">Cronbach’s alpha</label><input id="alphaValue" type="number" min="0" max="1" step="0.001" placeholder="Example: 0.82" /></div>
+            <div class="field"><label for="alphaItems">Number of items</label><input id="alphaItems" type="number" min="1" step="1" placeholder="Example: 12" /></div>
+            <div class="field"><label for="alphaUse">Instrument use</label><select id="alphaUse"><option value="">Select one</option><option value="research">Academic research</option><option value="screening">Screening / applied use</option><option value="pilot">Pilot testing</option></select></div>
+            <div class="field"><label for="alphaReverse">Were reverse-coded items handled correctly?</label><select id="alphaReverse"><option value="">Select one</option><option value="yes">Yes</option><option value="no">No</option><option value="unsure">Not sure</option></select></div>
+          </div>
+          <div class="actions"><button class="btn-primary" id="interpretAlphaBtn" type="button">Interpret Alpha</button><button class="btn-secondary" id="resetAlphaBtn" type="button">Reset</button></div>
+          <div class="result" id="alphaResultBox"><h3>Reliability interpretation</h3><div class="test-name" id="alphaTitle">—</div><p id="alphaMeaning"></p><p id="alphaInterpretation"></p><p id="alphaCaution"></p><div class="premium-grid"><div class="premium-item"><strong>Below 0.60</strong><span>Usually suggests poor internal consistency.</span></div><div class="premium-item"><strong>0.70 to 0.79</strong><span>Often considered acceptable in many research settings.</span></div><div class="premium-item"><strong>0.80 and above</strong><span>Generally suggests good to very good reliability.</span></div></div></div>
+        </div>
+      </section>
+
+      <section class="tool-section" id="survey-checklist">
+        <div class="tool-card">
+          <div class="tool-header"><h2>Survey Data Cleaning Checklist</h2><p>Generate a simple checklist of what to inspect before analysis, reporting, or dashboarding.</p></div>
+          <div class="form-grid">
+            <div class="field"><label for="surveyMissing">Do you expect missing values?</label><select id="surveyMissing"><option value="">Select one</option><option value="yes">Yes</option><option value="no">No</option><option value="unsure">Not sure</option></select></div>
+            <div class="field"><label for="surveyDuplicates">Are duplicate responses possible?</label><select id="surveyDuplicates"><option value="">Select one</option><option value="yes">Yes</option><option value="no">No</option><option value="unsure">Not sure</option></select></div>
+            <div class="field"><label for="surveyScales">Does your survey use multi-item scales?</label><select id="surveyScales"><option value="">Select one</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+          </div>
+          <div class="actions"><button class="btn-primary" id="buildChecklistBtn" type="button">Build Checklist</button><button class="btn-secondary" id="resetChecklistBtn" type="button">Reset</button></div>
+          <div class="result" id="checklistResultBox"><h3>Your survey cleaning checklist</h3><div class="test-name" id="checklistTitle">—</div><p id="checklistMeaning"></p><div class="checklist" id="checklistItems"></div><p id="checklistCaution"></p><div class="cta-box"><strong>Need full survey cleaning, coding, reliability testing, and analysis?</strong><span>We help clean messy survey files, recode variables, score scales, test reliability, build dashboards, run inferential analysis, and prepare final reports.</span><div class="cta-buttons"><a class="wa-btn" data-wa-link="Hello Acadata Insight Consult. I used your Survey Data Cleaning Checklist and I need help cleaning my dataset." href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><span class="app-icon whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.52 0 .2 5.31.2 11.86c0 2.09.55 4.13 1.59 5.92L0 24l6.39-1.68a11.83 11.83 0 0 0 5.68 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.24-6.14-3.42-8.43ZM12.08 21.74h-.01a9.85 9.85 0 0 1-5.02-1.38l-.36-.21-3.79.99 1.01-3.7-.23-.38a9.8 9.8 0 0 1-1.5-5.2c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.11 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.44 9.9-9.88 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.48-1.74-1.66-2.03-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.45 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.3 1.27.48 1.71.62.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.03-1.41.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35Z"/></svg></span><span class="sr-only">Chat on WhatsApp</span></a><a class="email-btn" href="mailto:acadataconsult@gmail.com?subject=Help%20with%20survey%20data%20cleaning" aria-label="Send Email" title="Send Email"><span class="app-icon email-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.1.17 6.25 4.91a1.05 1.05 0 0 0 1.3 0l6.25-4.91a.75.75 0 1 0-.93-1.18L12 10.5 6.03 5.74a.75.75 0 0 0-.93 1.18Z" fill="currentColor"/></svg></span><span class="sr-only">Send Email</span></a></div></div></div>
+        </div>
+      </section>
+
+      <section class="tool-section" id="power-calculator">
+        <div class="tool-card">
+          <div class="tool-header"><h2>Power Calculator</h2><p>Estimate approximate statistical power for a two-group comparison using effect size, sample sizes, and significance level.</p></div>
+          <div class="form-grid">
+            <div class="field"><label for="powerEffect">Effect size (Cohen’s d)</label><input id="powerEffect" type="number" step="0.01" placeholder="Example: 0.50" /></div>
+            <div class="field"><label for="powerN1">Sample size in group 1</label><input id="powerN1" type="number" min="2" step="1" placeholder="Example: 60" /></div>
+            <div class="field"><label for="powerN2">Sample size in group 2</label><input id="powerN2" type="number" min="2" step="1" placeholder="Example: 60" /></div>
+            <div class="field"><label for="powerAlpha">Significance level (alpha)</label><select id="powerAlpha"><option value="">Select one</option><option value="0.10">0.10</option><option value="0.05">0.05</option><option value="0.01">0.01</option></select></div>
+          </div>
+          <div class="actions"><button class="btn-primary" id="calcPowerBtn" type="button">Estimate Power</button><button class="btn-secondary" id="resetPowerBtn" type="button">Reset</button></div>
+          <div class="result" id="powerResultBox"><h3>Estimated statistical power</h3><div class="test-name" id="powerTitle">—</div><p id="powerMeaning"></p><p id="powerInterpretation"></p><p id="powerCaution"></p><div class="cta-box"><strong>Need help planning a study with enough power?</strong><span>We can help determine defensible sample sizes, effect size assumptions, analysis plans, and protocol-ready statistical justifications.</span><div class="cta-buttons"><a class="wa-btn" data-wa-link="Hello Acadata Insight Consult. I used your Power Calculator and I need help planning my study." href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><span class="app-icon whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.52 0 .2 5.31.2 11.86c0 2.09.55 4.13 1.59 5.92L0 24l6.39-1.68a11.83 11.83 0 0 0 5.68 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.24-6.14-3.42-8.43ZM12.08 21.74h-.01a9.85 9.85 0 0 1-5.02-1.38l-.36-.21-3.79.99 1.01-3.7-.23-.38a9.8 9.8 0 0 1-1.5-5.2c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.11 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.44 9.9-9.88 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.48-1.74-1.66-2.03-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.45 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.3 1.27.48 1.71.62.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.03-1.41.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35Z"/></svg></span><span class="sr-only">Chat on WhatsApp</span></a><a class="email-btn" href="mailto:acadataconsult@gmail.com?subject=Help%20with%20study%20power" aria-label="Send Email" title="Send Email"><span class="app-icon email-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.1.17 6.25 4.91a1.05 1.05 0 0 0 1.3 0l6.25-4.91a.75.75 0 1 0-.93-1.18L12 10.5 6.03 5.74a.75.75 0 0 0-.93 1.18Z" fill="currentColor"/></svg></span><span class="sr-only">Send Email</span></a></div></div></div>
+        </div>
+      </section>
+
+      <section class="tool-section" id="sample-size-estimator">
+        <div class="tool-card">
+          <div class="tool-header"><h2>Sample Size Estimator</h2><p>Estimate sample size for a proportion using confidence level, margin of error, and expected prevalence.</p></div>
+          <div class="form-grid">
+            <div class="field"><label for="ssPrevalence">Expected proportion / prevalence</label><input id="ssPrevalence" type="number" min="0" max="1" step="0.001" placeholder="Example: 0.50" /></div>
+            <div class="field"><label for="ssMargin">Margin of error</label><input id="ssMargin" type="number" min="0.001" max="1" step="0.001" placeholder="Example: 0.05" /></div>
+            <div class="field"><label for="ssConfidence">Confidence level</label><select id="ssConfidence"><option value="">Select one</option><option value="1.645">90%</option><option value="1.96">95%</option><option value="2.576">99%</option></select></div>
+            <div class="field"><label for="ssPopulation">Population size (optional)</label><input id="ssPopulation" type="number" min="1" step="1" placeholder="Example: 1200" /></div>
+          </div>
+          <div class="actions"><button class="btn-primary" id="calcSampleBtn" type="button">Estimate Sample Size</button><button class="btn-secondary" id="resetSampleBtn" type="button">Reset</button></div>
+          <div class="result" id="sampleResultBox"><h3>Estimated sample size</h3><div class="test-name" id="sampleTitle">—</div><p id="sampleMeaning"></p><p id="sampleInterpretation"></p><p id="sampleCaution"></p><div class="cta-box"><strong>Need a defendable sample size for your thesis or grant?</strong><span>We can help refine prevalence assumptions, design effects, non-response adjustments, and write the full sample size justification for your methodology.</span><div class="cta-buttons"><a class="wa-btn" data-wa-link="Hello Acadata Insight Consult. I used your Sample Size Estimator and I need help justifying my sample size." href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><span class="app-icon whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.52 0 .2 5.31.2 11.86c0 2.09.55 4.13 1.59 5.92L0 24l6.39-1.68a11.83 11.83 0 0 0 5.68 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.24-6.14-3.42-8.43ZM12.08 21.74h-.01a9.85 9.85 0 0 1-5.02-1.38l-.36-.21-3.79.99 1.01-3.7-.23-.38a9.8 9.8 0 0 1-1.5-5.2c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.11 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.44 9.9-9.88 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.48-1.74-1.66-2.03-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.45 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.3 1.27.48 1.71.62.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.03-1.41.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35Z"/></svg></span><span class="sr-only">Chat on WhatsApp</span></a><a class="email-btn" href="mailto:acadataconsult@gmail.com?subject=Help%20with%20sample%20size%20calculation" aria-label="Send Email" title="Send Email"><span class="app-icon email-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.1.17 6.25 4.91a1.05 1.05 0 0 0 1.3 0l6.25-4.91a.75.75 0 1 0-.93-1.18L12 10.5 6.03 5.74a.75.75 0 0 0-.93 1.18Z" fill="currentColor"/></svg></span><span class="sr-only">Send Email</span></a></div></div></div>
+        </div>
+      </section>
+
+      <div class="tool-card utility-card">
+        <div class="tool-header">
+          <h2>Tips for students and researchers</h2>
+          <ul class="help-list">
+            <li>A p-value does not tell you how large or important an effect is.</li>
+            <li>The best chart depends on your message, not just the dataset.</li>
+            <li>The right statistical test still depends on assumptions and study design.</li>
+            <li>Always combine statistical significance with subject-matter interpretation.</li>
+            <li>Reliability, cleaning quality, and variable coding strongly affect the final results.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Acadata Insight Consult. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
