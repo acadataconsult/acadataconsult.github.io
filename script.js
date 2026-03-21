@@ -2,8 +2,8 @@
 const SETTINGS = {
   whatsappNumberInternational: "233265355732",
   officialEmail: "acadataconsult@gmail.com",
-  facebookUrl: "https://facebook.com/YOUR_PAGE",
-  instagramUrl: "https://www.instagram.com/acadatainsightconsult/",
+  facebookUrl: "https://facebook.com/acadmentorresearchconsult/",
+  instagramUrl: "https://www.instagram.com/acadmentorresearchconsult/",
   peopleServed: 50,
   bookingUrl: "#",
 };
